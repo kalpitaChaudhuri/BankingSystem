@@ -8,7 +8,11 @@ public interface AccountService {
 	
 	AccountsData createAccount(AccountsData accountsdata);
 	
-	AccountsData getAccountByid(int id);
+	AccountsData getAccountById(int id);
+	
+	AccountsData getAccountsByName(String name);
+	
+	AccountsData getAccountsByAge(int age);
 	
 	AccountsData deposit(int id, double amount);
 	

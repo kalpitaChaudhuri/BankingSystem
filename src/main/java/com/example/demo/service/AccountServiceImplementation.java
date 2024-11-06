@@ -24,9 +24,21 @@ public class AccountServiceImplementation implements AccountService{
 	}
 
 	@Override
-	public AccountsData getAccountByid(int id) {
+	public AccountsData getAccountById(int id) {
 		Accounts account=accrepo.findById(id).orElseThrow(() ->new  RuntimeException("id does not exists"));
 		return AccountMapper.maptoaccountdetails(account);
+	}
+	
+	@Override
+	public AccountsData getAccountsByName(String name) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public AccountsData getAccountsByAge(int age) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 	@Override
