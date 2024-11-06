@@ -12,7 +12,7 @@ import com.example.demo.data.AccountsData;
 import com.example.demo.service.AccountService;
 
 @RestController
-@RequestMapping("/bank")
+@RequestMapping("/bankacc")
 public class AccountController {
 
 	@Autowired
