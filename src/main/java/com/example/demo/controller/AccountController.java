@@ -18,6 +18,14 @@ public class AccountController {
 	@Autowired
 	AccountService accountservice;
 	
+	public AccountService getAccountservice() {
+		return accountservice;
+	}
+
+	public void setAccountservice(AccountService accountservice) {
+		this.accountservice = accountservice;
+	}
+
 	@PostMapping("/save")
 	public ResponseEntity<AccountsData> addaccount(@RequestBody AccountsData accountsdata) {
 		//System.out.println("Triggered");
