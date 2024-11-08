@@ -11,7 +11,7 @@ public class AccountMapper {
 	}
 	
 	public static AccountsData maptoaccountdetails(Accounts acc) {
-		AccountsData accdto = new AccountsData(acc.getId(), acc.getAccountHolderName(), acc.getAccountHolderAge(), acc.getBalance());
-		return accdto;
+		AccountsData accountdata = new AccountsData(acc.getId(), acc.getAccountHolderName(), acc.getAccountHolderAge(), acc.getBalance());
+		return accountdata;
 	}
 }

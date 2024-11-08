@@ -2,8 +2,11 @@ package com.example.demo.service;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.example.demo.data.AccountsData;
 
+@Service
 public interface AccountService {
 	
 	AccountsData createAccount(AccountsData accountsdata);

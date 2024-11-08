@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.service.implementation;
 
 import java.util.List;
 
@@ -9,26 +9,27 @@ import com.example.demo.data.AccountsData;
 import com.example.demo.entities.Accounts;
 import com.example.demo.mapper.AccountMapper;
 import com.example.demo.repository.AccountRepository;
+import com.example.demo.service.AccountService;
 
 @Component
 public class AccountServiceImplementation implements AccountService{
 	
 	@Autowired
-	AccountRepository accrepo;
+	private AccountRepository accountrepository;
 
 	@Override
 	public AccountsData createAccount(AccountsData accountsdata) {
 		Accounts acc=AccountMapper.maptoaccount(accountsdata);
-		Accounts datasaved=accrepo.save(acc);
-		return AccountMapper.maptoaccountdetails(datasaved);
+		Accounts accsaved=accountrepository.save(acc);
+		return AccountMapper.maptoaccountdetails(accsaved);
 	}
 
 	@Override
 	public AccountsData getAccountById(int id) {
-		Accounts account=accrepo.findById(id).orElseThrow(() ->new  RuntimeException("id does not exists"));
+		Accounts account=accountrepository.findById(id).orElseThrow(() ->new  RuntimeException("id does not exists"));
 		return AccountMapper.maptoaccountdetails(account);
 	}
-	
+
 	@Override
 	public AccountsData getAccountsByName(String name) {
 		// TODO Auto-generated method stub
@@ -64,5 +65,4 @@ public class AccountServiceImplementation implements AccountService{
 		// TODO Auto-generated method stub
 		
 	}
-
 }
